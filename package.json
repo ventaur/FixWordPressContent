@@ -1,0 +1,17 @@
+{
+  "name": "fix-wp-content",
+  "version": "0.0.1",
+  "description": "Fixes several issues with WP content before importing to Ghost.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blogging"
+  ],
+  "author": "Ventaur",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^4.1.1"
+  }
+}
