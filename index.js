@@ -1,22 +1,45 @@
-const program = require('commander');
-
-const readConfig = require('./lib/readConfig');
-const { readExport, writeExport } = require('./lib/exportFile');
+#!/usr/bin/env node
 
 
-function fixItAll (config, data) {
+const commander = require('commander');
+const program = new commander.Command();
+
+const readJsonFile = require('./lib/readJsonFile');
+const reportDomains = require('./lib/reportDomains');
+
+
+function fix (config, data) {
     // TODO: Call each fixer.
 }
 
 
+program.version('0.0.1');
+    
 program
-    .version('0.0.1')
-    .arguments('<configPath> <wordPressToGhostExportPath>')
-    .action(function (configPath, wordPressToGhostExportPath) {
-        const config = readConfig(configPath);
-        const data = readExport(wordPressToGhostExportPath);
+    .command('domains <exportPath>')
+    .description('Generate a report on the domains used in the export file.')
+    .action(function (exportPath) {
+        const data = readJsonFile(exportPath);
+        reportDomains(data);
+    });
+
+program
+    .command('* <configPath> <exportPath> <fixedExportPath>')
+    .description('Fix any issues in the export file.')
+    .action(function (configPath, exportPath, fixedExportPath) {
+        console.log('Called based with:');
+        console.log('  ' + configPath);
+        console.log('  ' + exportPath);
+        console.log('  ' + fixedExportPath)
+        return;
+
+        /*
+        const config = readJsonFile(configPath);
+        const data = readJsonFile(wordPressToGhostExportPath);
         
-        const fixedData = fixItAll(config, data);
+        const fixedData = fix(config, data);
         writeExport(fixedData, wordPressToGhostExportPath);
-    })
-    .parse(process.argv);
+        *
+    /    });
+
+program.parse(process.argv);
