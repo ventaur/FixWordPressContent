@@ -14,6 +14,7 @@
   "author": "Ventaur",
   "license": "ISC",
   "dependencies": {
-    "commander": "^4.1.1"
+    "commander": "^4.1.1",
+    "lodash.countby": "^4.6.0"
   }
 }

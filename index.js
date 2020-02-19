@@ -1,11 +1,10 @@
-#!/usr/bin/env node
-
-
 const commander = require('commander');
 const program = new commander.Command();
 
+const console = require('./lib/console');
 const readJsonFile = require('./lib/readJsonFile');
-const reportDomains = require('./lib/reportDomains');
+const extractDomainInfo = require('./lib/extractDomainInfo');
+const generateDomainReport = require('./lib/generateDomainReport');
 
 
 function fix (config, data) {
@@ -17,10 +16,15 @@ program.version('0.0.1');
     
 program
     .command('domains <exportPath>')
+    .option('-d, --details', 'Include the details for each domain.')
     .description('Generate a report on the domains used in the export file.')
-    .action(function (exportPath) {
+    .action(function (exportPath, cmd) {
         const data = readJsonFile(exportPath);
-        reportDomains(data);
+        const infoByDomain = extractDomainInfo(data);
+        const domainReport = generateDomainReport(infoByDomain, cmd.details);
+        
+        console.log();
+        console.log(domainReport);
     });
 
 program
