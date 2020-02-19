@@ -39,7 +39,7 @@ program
         
         const fixedData = fix(config, data);
         writeExport(fixedData, wordPressToGhostExportPath);
-        *
-    /    });
+        */
+    });
 
 program.parse(process.argv);
