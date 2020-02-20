@@ -7,6 +7,15 @@ const extractDomainInfo = require('./lib/extractDomainInfo');
 const generateDomainReport = require('./lib/generateDomainReport');
 
 
+function reportDomains(exportPath, includeDetails) {
+    const data = readJsonFile(exportPath);
+    const infoByDomain = extractDomainInfo(data);
+    const domainReport = generateDomainReport(infoByDomain, includeDetails);
+    
+    console.log();
+    console.log(domainReport);
+}
+
 function fix (config, data) {
     // TODO: Call each fixer.
 }
@@ -19,12 +28,7 @@ program
     .option('-d, --details', 'Include the details for each domain.')
     .description('Generate a report on the domains used in the export file.')
     .action(function (exportPath, cmd) {
-        const data = readJsonFile(exportPath);
-        const infoByDomain = extractDomainInfo(data);
-        const domainReport = generateDomainReport(infoByDomain, cmd.details);
-        
-        console.log();
-        console.log(domainReport);
+        reportDomains(exportPath, cmd.details);
     });
 
 program
