@@ -1,0 +1,20 @@
+{
+    "thisBlog": {
+        "canonicalDomain": "beraventume.ventaur.com",
+        "aliasDomains": []
+    },
+    "relatedBlogs": [
+        {
+            "canonicalDomain": "alteryoursurroundings.axiomforge.com",
+            "aliasDomains": [ "www.alteryoursurroundings.com" ]
+        },
+        {
+            "canonicalDomain": "geekfreeq.axiomforge.com",
+            "aliasDomains": [ "www.geekfreeq.com" ]
+        },
+        {
+            "canonicalDomain": "liwovien.ventaur.com",
+            "aliasDomains": [ "www.liwovien.com" ]
+        }
+    ]
+}
