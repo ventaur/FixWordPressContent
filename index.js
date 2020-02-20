@@ -2,9 +2,10 @@ const commander = require('commander');
 const program = new commander.Command();
 
 const console = require('./lib/console');
-const readJsonFile = require('./lib/readJsonFile');
+const { readJsonFile, writeJsonFile } = require('./lib/jsonFile');
 const extractDomainInfo = require('./lib/extractDomainInfo');
 const generateDomainReport = require('./lib/generateDomainReport');
+const fixAll = require('./lib/fixAll');
 
 
 function reportDomains(exportPath, includeDetails) {
@@ -16,8 +17,12 @@ function reportDomains(exportPath, includeDetails) {
     console.log(domainReport);
 }
 
-function fix (config, data) {
-    // TODO: Call each fixer.
+function fix(configPath, exportPath, fixedExportPath) {
+    const config = readJsonFile(configPath);
+    const data = readJsonFile(exportPath);
+    
+    const fixedData = fixAll(config, data);
+    writeJsonFile(fixedData, fixedExportPath);
 }
 
 
@@ -34,20 +39,6 @@ program
 program
     .command('* <configPath> <exportPath> <fixedExportPath>')
     .description('Fix any issues in the export file.')
-    .action(function (configPath, exportPath, fixedExportPath) {
-        console.log('Called based with:');
-        console.log('  ' + configPath);
-        console.log('  ' + exportPath);
-        console.log('  ' + fixedExportPath)
-        return;
-
-        /*
-        const config = readJsonFile(configPath);
-        const data = readJsonFile(wordPressToGhostExportPath);
-        
-        const fixedData = fix(config, data);
-        writeExport(fixedData, wordPressToGhostExportPath);
-        */
-    });
+    .action(fix);
 
 program.parse(process.argv);
