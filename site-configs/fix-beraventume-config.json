@@ -5,14 +5,17 @@
     },
     "relatedBlogs": [
         {
+            "canonicalScheme": "https://",
             "canonicalDomain": "alteryoursurroundings.axiomforge.com",
             "aliasDomains": [ "www.alteryoursurroundings.com" ]
         },
         {
+            "canonicalScheme": "https://",
             "canonicalDomain": "geekfreeq.axiomforge.com",
             "aliasDomains": [ "www.geekfreeq.com" ]
         },
         {
+            "canonicalScheme": "https://",
             "canonicalDomain": "liwovien.ventaur.com",
             "aliasDomains": [ "www.liwovien.com" ]
         }
