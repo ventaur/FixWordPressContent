@@ -22,7 +22,7 @@ function fix(configPath, exportPath, fixedExportPath) {
     const data = readJsonFile(exportPath);
     
     const fixedData = fixAll(config, data);
-    writeJsonFile(fixedExportPath, fixedData);
+    writeJsonFile(fixedExportPath, fixedData, config.jsonOutputIndentSize);
 }
 
 

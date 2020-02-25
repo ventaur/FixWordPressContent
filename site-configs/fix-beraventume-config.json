@@ -19,5 +19,6 @@
             "canonicalDomain": "liwovien.ventaur.com",
             "aliasDomains": [ "www.liwovien.com" ]
         }
-    ]
+    ],
+    "jsonOutputIndentSize": 0
 }
