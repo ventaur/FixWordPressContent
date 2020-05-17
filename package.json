@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Fixes several issues with WP content before importing to Ghost.",
   "bin": {
-    "fix-wp-export": "./bin/index.js"
+    "fix-wp-export": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
