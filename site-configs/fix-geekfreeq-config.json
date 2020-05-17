@@ -1,0 +1,14 @@
+{
+    "thisBlog": {
+        "canonicalDomain": "geekfreeq.axiomforge.com",
+        "aliasDomains": [ "www.geekfreeq.com", "blog.ventaur.com" ]
+    },
+    "relatedBlogs": [
+        {
+            "canonicalScheme": "https://",
+            "canonicalDomain": "liwovien.ventaur.com",
+            "aliasDomains": [ "www.liwovien.com" ]
+        }
+    ],
+    "jsonOutputIndentSize": 0
+}
