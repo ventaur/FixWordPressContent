@@ -1,6 +1,10 @@
 # Fix WordPress Content
 
-This app fixes several issues with WP content before importing to Ghost. 
+This app fixes several issues with WP content before importing to Ghost.
+
+## To Do
+
+For the love of Kratos, write some fricken tests!
 
 ## Installation
 
