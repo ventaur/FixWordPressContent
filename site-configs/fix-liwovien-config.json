@@ -1,0 +1,19 @@
+{
+    "thisBlog": {
+        "canonicalDomain": "liwovien.ventaur.com",
+        "aliasDomains": []
+    },
+    "relatedBlogs": [
+        {
+            "canonicalScheme": "https://",
+            "canonicalDomain": "beraventume.ventaur.com",
+            "aliasDomains": []
+        },
+        {
+            "canonicalScheme": "https://",
+            "canonicalDomain": "alteryoursurroundings.axiomforge.com",
+            "aliasDomains": [ "www.alteryoursurroundings.com" ]
+        }
+    ],
+    "jsonOutputIndentSize": 0
+}
